@@ -1,0 +1,15 @@
+SELECT apellido FROM empleados
+SELECT DISTINCT apellido FROM empleados
+SELECT * FROM empleados WHERE apellido = "Lopez"
+SELECT * FROM empleados WHERE apellido = "Lopez" OR apellido = "Perez"
+SELECT * FROM empleados WHERE departamento_id = "14"
+SELECT * FROM empleados WHERE departamento_id = "37" OR departamento_id = "77"
+SELECT * FROM empleados WHERE apellido LIKE "P%"
+SELECT SUM(presupuesto) as Total_presupuesto FROM departamentos
+SELECT * FROM empleados, departamentos WHERE departamento_id=id_departamento
+SELECT nombre, apellido FROM empleados, departamentos WHERE presupuesto>60000 && departamento_id=id_departamento
+INSERT INTO departamentos (id_departamento, nombre_depto, presupuesto) VALUES (11,"Calidad",40000)
+INSERT INTO empleados (nombre, apellido, dni, departamento_id) VALUES ("Esther","Vazquez", 89267109, 11)
+UPDATE departamentos SET presupuesto = presupuesto*0.9
+UPDATE empleados SET departamento_id = 14 WHERE departamento_id=77
+DELETE FROM empleados WHERE departamento_id = 14
